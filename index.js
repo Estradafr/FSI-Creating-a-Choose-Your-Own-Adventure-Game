@@ -6,15 +6,15 @@ const catStayMsg = "You live happily amongst the cats for the rest of your days.
 const spreadMsg =
   "After leaving the cat colony, you are never able to find it again; without proof, no one believes your story, which passes into legend nonetheless.";
 const continueMsg =
-  "You come across a chamber that reaches upward to a shining light above. There is a long, winding staircase, and a much quicker, but rickety-looking ladder that leads up toward the light. Which do you take?";
+  "You come across a chamber that reaches upward to a shining light above. There is a long, winding staircase, and a much quicker, but rickety-looking ladder that leads up toward the light. Do you take the ladder or the staircase?";
 const ladderMsg =
   "After ascending a few feet up the ladder, one of its rungs snaps, and you comedically fall through each of the rungs below. Sheepish, you return home.";
 const staircaseMsg =
   "After ascending the staircase, you discover a shiny blue stone, which you take home and cherish forever.";
 const rightMsg =
-  "You come across a snoring dragon. On the other side of him, you see a shiny chest of treasure. Another path would lead you away from the dragon altogether. Which do you take: treasure, or away?";
+  "You come across a snoring dragon. On the other side of him, you see a shiny chest of treasure. Another path would lead you away from the dragon altogether. Will you go towards the treasure or away?";
 const treasureMsg =
-  "The dragon wakes up and sits upright. You only have a moment to respond, you choose stay or run:";
+  "The dragon wakes up and sits upright. You only have a moment to respond, do you choose stay or run?";
 const dragonStayMsg =
   "You and the dragon have an uplifting conversation about local politics and become lifelong friends.";
 const runMsg =
@@ -41,9 +41,9 @@ if (firstAnswer === "left") {
     }
   } else if (secondAnswer === "continue") {
     let thirdAnswer = prompt(continueMsg).toLowerCase();
-    if (thirdAnswer === "ladder") {
+    if (thirdAnswer === "the ladder" || "ladder") {
       alert(ladderMsg);
-    } else if (thirdAnswer === "staircase") {
+    } else if (thirdAnswer === "the staircase" || "staircase") {
       alert(staircaseMsg);
     } else {
       alert(retryMsg);
@@ -53,7 +53,7 @@ if (firstAnswer === "left") {
   }
 } else if (firstAnswer === "right") {
   let secondAnswer = prompt(rightMsg).toLowerCase();
-  if (secondAnswer === "treasure") {
+  if (secondAnswer === "towards the treasure" || "to the treasure" || "treasure") {
     let thirdAnswer = prompt(treasureMsg).toLowerCase();
     if (thirdAnswer === "stay") {
       alert(dragonStayMsg);
